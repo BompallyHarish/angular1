@@ -11,7 +11,8 @@ export class EmployeeService {
       { name: "Harish", value: 0 },
       { name: "Vrinda", value: 1 },
       { name: "Adwaith", value: 2 },
-      { name: "Yasshna", value: 3 }
+      { name: "Yasshna", value: 3 },
+      {name:"Ravali", value:4}
     ]
   }
 }
