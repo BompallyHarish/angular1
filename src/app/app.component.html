@@ -263,10 +263,13 @@
     <h2>{{i}} {{a}}</h2>
   </div>
   <h1>service Loop</h1>
-  <div *ngFor="let a of data; index as i">
-    <h2>{{i}} {{a.name}}</h2>
+  <div *ngFor="let a of data.data; index as i">
+    <div *ngIf="i<10">
+      <h2>{{i}} {{a}}</h2>
+    </div>
+
   </div>
-  <app-test (childEvent)="receiveMessage($event)" [parentData]="name"></app-test>
+  <!-- <app-test (childEvent)="receiveMessage($event)" [parentData]="name"></app-test> -->
   <h2>output message {{message}}</h2>
 
   <h1>{{15 | currency}}</h1>

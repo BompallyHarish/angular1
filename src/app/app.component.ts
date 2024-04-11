@@ -62,10 +62,25 @@ export class AppComponent {
   // services
 
   public data: any = [];
+  public value1: any = 10
   constructor(private employeeService: EmployeeService) {
 
   }
   ngOnInit() {
-    this.data = this.employeeService.getEmployees()
+    this.statesData()
+    // this.employeeService.getStatesOfUS().subscribe((res: any) => {
+
   }
+  statesData() {
+    this.employeeService.getStatesOfUS().subscribe(async (res: any) => {
+      // console.log(res)
+      this.data = res
+    },
+      (error: any) => {
+        console.log('error ', error)
+      }
+    )
+  }
+
+
 }
