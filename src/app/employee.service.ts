@@ -18,6 +18,6 @@ export class EmployeeService {
 
 
   getStatesOfUS() {
-    return this.http.get('http://localhost:8080/api/v1.0/stateTax/getStatesOfUS')
+    return this.http.get('https://paycalculator.apphr.io/api/v1.0/stateTax/getStatesOfUS')
   }
 }
