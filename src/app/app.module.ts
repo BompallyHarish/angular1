@@ -7,13 +7,11 @@ import { CommonModule, CurrencyPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS, provideHttpClient, withFetch } from '@angular/common/http';
 import { EmployeeService } from './employee.service';
-import { TestComponent } from './test/test.component';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        TestComponent,
         routingComponents
     ],
     imports: [
