@@ -1,5 +1,5 @@
 <p>department-list works!</p>
 
 <div *ngFor="let department of departmentList">
-    <a (click)="onSelect(department)">  {{department.name}}</a>
+    <a (click)="onSelect(department)" [class.selected]="isSelected(department)">  {{department.name}}</a>
 </div>

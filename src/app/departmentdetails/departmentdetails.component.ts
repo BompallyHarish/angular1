@@ -29,4 +29,8 @@ export class DepartmentdetailsComponent {
     // this.departmentId = id
     this.router.navigate(['departments', id])
   }
+  goToDepartments(){
+    let selectedId = this.departmentId
+    this.router.navigate(['departments', {id:selectedId}])
+  }
 }
