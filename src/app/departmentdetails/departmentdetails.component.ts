@@ -22,15 +22,18 @@ export class DepartmentdetailsComponent {
   goToNext() {
     let id = parseInt(this.departmentId) +1
     // this.departmentId = id
-    this.router.navigate(['departments', id])
+    // this.router.navigate(['departments', id])
+    this.router.navigate(['../',id],{relativeTo: this.route})
   }
   goToPrevious() {
     let id = parseInt(this.departmentId) -1
     // this.departmentId = id
-    this.router.navigate(['departments', id])
+    // this.router.navigate(['departments', id])
+    this.router.navigate(['../',id],{relativeTo: this.route})
   }
   goToDepartments(){
     let selectedId = this.departmentId
-    this.router.navigate(['departments', {id:selectedId}])
+    // this.router.navigate(['departments', {id:selectedId}])
+    this.router.navigate(['../',{id:selectedId}],{relativeTo: this.route})
   }
 }
