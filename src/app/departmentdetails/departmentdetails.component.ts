@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router,ParamMap } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-departmentdetails',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet,RouterLink,RouterLinkActive,],
   templateUrl: './departmentdetails.component.html',
   styleUrl: './departmentdetails.component.css'
 }) 
@@ -35,5 +38,12 @@ export class DepartmentdetailsComponent {
     let selectedId = this.departmentId
     // this.router.navigate(['departments', {id:selectedId}])
     this.router.navigate(['../',{id:selectedId}],{relativeTo: this.route})
+  }
+  goToOverView(){
+    this.router.navigate(['overview'], {relativeTo:this.route})
+
+  }
+  goToContact(){
+    this.router.navigate(['contact'], {relativeTo:this.route})
   }
 }
