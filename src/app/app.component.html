@@ -8,13 +8,13 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<main class="main">
+<!-- <main class="main">
   <ul>
     <li>
       <h2>hello {{title}}</h2>
 
     </li>
-    <!-- class binding -->
+    class binding
     <li>
       <h2 class="text-success">static class</h2>
     </li>
@@ -30,7 +30,7 @@
     <li>
       <h2 [class.text-special]=hasError>Dynamic class binding with condition from class variable</h2>
     </li>
-    <!-- style binding -->
+    style binding
     <li>
       <h2 [style.color]="'brown'">basic brown color</h2>
     </li>
@@ -45,36 +45,36 @@
 
 
   </ul>
-  <!-- Event binding -->
+  Event binding
   <div>
     <h2><button (click)=onClick($event)>send to console</button></h2>
     {{greet}}
   </div>
 
-  <!-- Template reference variables -->
+  Template reference variables
   <div>
     <input #myInput type="text">
     <button (click)="loggToconsole(myInput)">Log Message</button>
     {{loggedInput}}
   </div>
 
-  <!-- ngIF statements -->
+  ngIF statements
 
   <h1>ng If statements</h1>
-  <!-- method1 -->
+  method1
   <h2 *ngIf="value">Displaying based on boolean value</h2>
-  <!-- method2 -->
+  method2
   <div *ngIf="!value; else elseBlock">
     <h2>true value</h2>
   </div>
-  <!-- <ng-template thenBlock>
+  <ng-template thenBlock>
     <h2>2nd Method true output</h2>
-  </ng-template> -->
+  </ng-template>
   <ng-template #elseBlock>
     <h2>2nd Method false output</h2>
   </ng-template>
 
-  <!-- switch Case -->
+  switch Case
   <div [ngSwitch]="colour">
     <div *ngSwitchCase="'Red'">
       <h2>Red colour</h2>
@@ -90,7 +90,7 @@
     </div>
   </div>
 
-  <!-- For loops -->
+  For loops
   <h1>For Loops</h1>
   <div *ngFor="let a of arrays1; index as i">
     <h2>{{i}} {{a}}</h2>
@@ -102,7 +102,7 @@
     </div>
 
   </div>
-  <!-- <app-test (childEvent)="receiveMessage($event)" [parentData]="name"></app-test> -->
+  <app-test (childEvent)="receiveMessage($event)" [parentData]="name"></app-test>
   <h2>output message {{message}}</h2>
 
   <h1>{{15 | currency}}</h1>
@@ -115,6 +115,117 @@
   </nav>
   
 
+</main> -->
+
+<main class="main">
+  <div class="content">
+    <h1>Default Template driven From</h1>
+    <!-- {{userForm.value|json}}
+    <br>
+    <br>
+    {{userModel|json}}
+    <br><br>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      <div>
+        <label>Name</label><br>
+        <input type="String" placeholder="Name" required #test="ngModel" class="form-control"
+          [class.is-invalid]="test.invalid && test.touched" name="name" [(ngModel)]="userModel.name">
+        <small class="text-danger" [class.d-none]="test.valid">Name is required.</small>
+        <br>
+      </div>
+      <br>
+      {{test.valid}} <br><br>
+      <div>
+        <label>Email</label><br>
+        <input type="email" #email placeholder="Email" name="email" [(ngModel)]="userModel.email"><br><br>
+      </div>
+      <div>
+        {{email.className}} <br><br>
+      </div>
+
+      <div>
+        <label>Phone Number</label><br>
+        <input type="tel" placeholder="phone number" name="phone" required pattern="^\d{10}$" #phone="ngModel"
+          class="form-control" [class.is-invalid]="phone.invalid && phone.touched" [(ngModel)]="userModel.phone">
+        <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">phone Number is required and must be
+          10 digits.</small>
+        <div *ngIf="phone.errors && (phone.invalid || phone.touched)">
+          <small class="text-danger" *ngIf="phone.errors">phone number is required.</small>
+          <small class="text-danger" *ngIf="phone.errors">phone number must be 10 digits.</small>
+        </div>
+        <br><br>
+      </div>
+      <div ngModelGroup="address">
+        <div>
+          <label>street</label><br>
+          <input type="text" name="street" [(ngModel)]="userModel.street"><br><br>
+          <label>City</label><br>
+          <input type="text" name="city" [(ngModel)]="userModel.city"><br><br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Select Course</label><br>
+        <select required name="course" #course="ngModel" [class.is-invalid]="course.invalid && course.touched"
+          [(ngModel)]="userModel.course">
+          <option value=""> I am interested In</option>
+          <option *ngFor="let topic of topics">{{topic}}</option>
+        </select><br>
+        <small class="text-danger" [class.d-none]="course.valid || course.untouched">select course.</small>
+      </div>
+      <br>
+      <div>
+        <label name="shift">shift</label><br>
+        <input type="radio" name="preference" value="evening" [(ngModel)]="userModel.shift">
+        <label for="">Evening (5PM-12AM)</label>
+        <input type="radio" name="preference" value="morning" [(ngModel)]="userModel.shift">
+        <label for="">Morning (9AM-12PM)</label>
+      </div>
+      <br>
+      <div>
+        <input type="checkbox" name="promoOffers" [(ngModel)]="userModel.promoOffers">
+        <label>Send me promotional offers</label>
+      </div><br>
+      {{userForm.form.invalid}} <br><br>
+      <button [disabled]="userForm.form.invalid" class="btn btn-primary">Submit</button>
+    </form>
+    <br><br><br> -->
+    <!-- <hr class="line"><br> -->
+    <!-- {{signUpForm.value|json}}
+    <hr class="line"><br> -->
+    <!-- {{signUpModel | json}} -->
+    <!-- {{data}} -->
+    <hr class="line"><br>
+    <form #signUpForm="ngForm" (ngSubmit)="onSignup()" novalidate>
+      <div class="nextLine">
+        <input type="text" name="contactName" id="contactName" placeholder="Full Name" required
+          [(ngModel)]="signUpModel.contactName" #name="ngModel" class="form-control"
+          [class.is-invalid]="name.invalid && name.touched">
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required.</small>
+      </div>
+      <!-- {{name.valid}} -->
+      <div class=" nextLine">
+        <input type="text" name="email" placeholder="E-mail Address" required [(ngModel)]="signUpModel.email"
+          #email1="ngModel" class="form-control" [class.is-invalid]="email1.invalid && email1.touched">
+        <small class="text-danger" [class.d-none]="email1.valid || email1.untouched">email Id is required.</small>
+      </div>
+      <div class="nextLine">
+        <input type="phone no" name="phoneNumber" id="phoneNumber" placeholder="Phone No"
+          [(ngModel)]="signUpModel.phoneNumber" class="form-control">
+      </div>
+      <div class="nextLine">
+        <input type="text" name="password" id="password" placeholder="Password" required
+          [(ngModel)]="signUpModel.password" #password="ngModel" class="form-control"
+          [class.is-invalid]="password.invalid && password.touched">
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password required.</small>
+      </div>
+      <div>
+        <button class="btn btn-primary" [disabled]="signUpForm.form.invalid">signUp</button>
+      </div>
+    </form>
+
+    <br><br>
+
+  </div>
 </main>
 <router-outlet></router-outlet>
 

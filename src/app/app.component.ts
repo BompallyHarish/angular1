@@ -5,10 +5,13 @@ import { TestComponent } from './test/test.component';
 import { EmployeeService } from './employee.service';
 import { RouterLink } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
+import { Signup } from './signup';
+import { FormsModule } from '@angular/forms';
+import { BasicServiceService } from './basic-service.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink,RouterLinkActive, CommonModule, TestComponent],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, TestComponent, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -63,26 +66,38 @@ export class AppComponent {
 
   // services
 
-  public data: any = [];
   public value1: any = 10
-  constructor(private employeeService: EmployeeService) {
+  constructor(private employeeService: EmployeeService, private basicServiceService: BasicServiceService) {
 
   }
-  ngOnInit() {
-    this.statesData()
-    // this.employeeService.getStatesOfUS().subscribe((res: any) => {
+  // ngOnInit() {
+  //   this.statesData()
+  //   // this.employeeService.getStatesOfUS().subscribe((res: any) => {
 
-  }
-  statesData() {
-    this.employeeService.getStatesOfUS().subscribe(async (res: any) => {
-      // console.log(res)
-      this.data = res
+  // }
+  // statesData() {
+  //   this.employeeService.getStatesOfUS().subscribe(async (res: any) => {
+  //     // console.log(res)
+  //     this.data = res
+  //   },
+  //     (error: any) => {
+  //       console.log('error ', error)
+  //     }
+  //   )
+  // }
+
+  public signUpModel = new Signup("", "", "", "")
+
+
+  onSignup() {
+    this.basicServiceService.enroll(this.signUpModel).subscribe(async (res: any) => {
+      console.log(res)
     },
       (error: any) => {
-        console.log('error ', error)
-      }
-    )
+        console.log(error)
+      })
   }
+
 
 
 }
