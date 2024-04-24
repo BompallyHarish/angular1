@@ -195,6 +195,9 @@
     <!-- {{signUpModel | json}} -->
     <!-- {{data}} -->
     <hr class="line"><br>
+    <div class="alert alert-danger" *ngIf="errorMessage">
+      {{errorMessage}}
+    </div>
     <form #signUpForm="ngForm" (ngSubmit)="onSignup()" novalidate>
       <div class="nextLine">
         <input type="text" name="contactName" id="contactName" placeholder="Full Name" required
@@ -236,4 +239,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-

@@ -8,7 +8,7 @@ import { DepartmentContactComponent } from './department-contact/department-cont
 
 
 export const routes: Routes = [
-    {path:'',redirectTo:'/employees', pathMatch: 'full'},
+    // {path:'',redirectTo:'/employees', pathMatch: 'full'},
     {path: 'employees', component: EmployeeListComponent},
     {path: 'departments', component: DepartmentListComponent},
     {

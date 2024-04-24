@@ -70,6 +70,9 @@ export class AppComponent {
   constructor(private employeeService: EmployeeService, private basicServiceService: BasicServiceService) {
 
   }
+  ngOnInit() {
+    this.getUserData()
+  }
   // ngOnInit() {
   //   this.statesData()
   //   // this.employeeService.getStatesOfUS().subscribe((res: any) => {
@@ -87,17 +90,25 @@ export class AppComponent {
   // }
 
   public signUpModel = new Signup("", "", "", "")
-
-
+  public errorMessage: string = ''
+  getUserData() {
+    // console.log('true1')
+    this.basicServiceService.getDetails().subscribe(async (res: any) => {
+      // console.log(res)
+      this.signUpModel = res.data
+    },
+      (error: any) => {
+        console.log(error.statusText)
+        this.errorMessage = error.statusText
+      })
+  }
   onSignup() {
     this.basicServiceService.enroll(this.signUpModel).subscribe(async (res: any) => {
       console.log(res)
+      this.signUpModel = new Signup("", "", "", "")
     },
       (error: any) => {
         console.log(error)
       })
   }
-
-
-
 }
